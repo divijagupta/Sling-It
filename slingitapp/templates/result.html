@@ -25,18 +25,25 @@
     <h1 class="logo">Sling it</h1>
 
     <div class="result">
-      <span class="result-url"><span id="copy-url">{{new_url}}</span> <i class="far fa-copy fa-1x"  onclick="copy()"></i><span id="copy-status">
-      copy</span></span>
-
+      <p class="result-url">
+        <span id="copy-url">{{new_url}}</span> 
+        <i class="far fa-copy fa-1x"  onclick="copy()"></i>
+        <span id="copy-status">copy</span>
+        <a href={%url "home-page" %} ><i class="fas fa-undo"></i></a>
+        <span id="copy-status">go to home </span>
+      </p>
+ 
    </div>
     
+    
+   <p class="dnd"><a href="https://github.com/divijagupta/Sling-It"><i class="fab fa-github fa-2x"></i></a><br>Sling it &copy 2018</p>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
       
-
       function copy() {
         var copyText = document.getElementById("copy-url");
         var copyStatus = document.getElementById("copy-status");

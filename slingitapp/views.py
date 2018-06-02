@@ -5,6 +5,7 @@ from django.shortcuts import render,redirect
 from django.conf import settings
 from .models import *
 from django.http import Http404,HttpResponseRedirect
+from django.contrib import messages
 
 
 import random
@@ -20,12 +21,17 @@ def shorten(request):
 		if re.match("^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$",request.POST["long-url"]):
 			string=generate(6)
 			shorturl=str(settings.MY_URL)+string
+			if UrlTable.objects.filter(short_url=shorturl).exists():
+				string=generate(7)
+				shorturl=str(settings.MY_URL)+string
 			url=UrlTable.objects.create(short_url=shorturl,long_url=request.POST["long-url"])
 			return render(request,"result.html",{"new_url":url.short_url})
 		else: 
-			raise Http404("Wrong url entered")
+			messages.error(request, 'Url Entered in wrong format')
+			return render(request,"index.html",{})
 	else: 
-	   raise Http404("Wrong url entered")
+	   messages.error(request, 'No Url entered')
+	   return render(request,"index.html",{})
 		
 
 				
@@ -33,7 +39,7 @@ def redirect_url(request,short_string):
 	request_url=str(settings.MY_URL)+short_string
 	try:
 		url=UrlTable.objects.get(short_url=request_url)
-		url.active_hits+=url.active_hits
+		url.active_hits+=1
 		url.save()
 		return redirect(url.long_url)
 	except:
