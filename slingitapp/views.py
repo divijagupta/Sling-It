@@ -6,7 +6,7 @@ from django.conf import settings
 from .models import *
 from django.http import Http404,HttpResponseRedirect
 from django.contrib import messages
-
+from django.views.decorators.csrf import csrf_exempt
 
 import random
 import re
@@ -14,8 +14,8 @@ import re
 
 def home(request):
 	return render(request,"index.html",{})
-# Create your views here.
 
+@csrf_exempt
 def shorten(request):
 	if request.POST["long-url"]:
 		if re.match("^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$",request.POST["long-url"]):

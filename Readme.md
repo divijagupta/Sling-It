@@ -1,7 +1,7 @@
 
 ![Logo](images/logo.png)
 
-Sling It, a URL shortener that helps you generate short and crisp links which not only makes the link look much cleaner and allows customization, but also helps to keep a track of clicks and also monitor traffic behaviour
+[Slingit.](http://slingit.me), a URL shortener that helps you generate short and crisp links which not only makes the link look much cleaner and allows customization, but also helps to keep a track of clicks and also monitor traffic behaviour.
 
 
 ### Installation
