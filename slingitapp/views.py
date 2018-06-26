@@ -13,30 +13,35 @@ import re
 
 
 def home(request):
+	print request.META.get('REMOTE_ADDR')
 	return render(request,"index.html",{})
 
 @csrf_exempt
 def shorten(request):
-	if request.POST["long-url"]:
-		if re.match("^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$",request.POST["long-url"]):
-			string=generate(6)
-			shorturl=str(settings.MY_URL)+string
-			if UrlTable.objects.filter(short_url=shorturl).exists():
-				string=generate(7)
-				shorturl=str(settings.MY_URL)+string
-			url=UrlTable.objects.create(short_url=shorturl,long_url=request.POST["long-url"])
-			return render(request,"result.html",{"new_url":url.short_url})
+	if request.method=="POST":
+		if request.POST["long-url"]:
+			if re.match("^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$",request.POST["long-url"]):
+				string=generate(6)
+				shorturl=str(settings.MY_URL)+"/"+string
+				if UrlTable.objects.filter(short_url=shorturl).exists():
+					string=generate(7)
+					shorturl=str(settings.MY_URL)+"/"+string
+				url=UrlTable.objects.create(short_url=shorturl,long_url=request.POST["long-url"])
+				return render(request,"result.html",{"new_url":url.short_url})
+			else: 
+				messages.error(request, 'Url Entered in wrong format')
+				return render(request,"index.html",{})
 		else: 
-			messages.error(request, 'Url Entered in wrong format')
-			return render(request,"index.html",{})
+		   messages.error(request, 'No Url entered')
+		   return render(request,"index.html",{})
 	else: 
-	   messages.error(request, 'No Url entered')
-	   return render(request,"index.html",{})
+		return redirect("home-page")
+
 		
 
 				
 def redirect_url(request,short_string):
-	request_url=str(settings.MY_URL)+short_string
+	request_url=str(settings.MY_URL)+"/"+short_string
 	try:
 		url=UrlTable.objects.get(short_url=request_url)
 		url.active_hits+=1

@@ -1,17 +1,20 @@
 {%extends "base.html"%} 
 {%block title%}
-<title>Sling it | Home</title>
+<title>SLINGIT.ME | URL Shortner  </title>
 {%endblock%}
  {%block body%}
-<form action={%url "shorten" %} method="post">
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-            {% endfor %}
-    </ul>
-    {% endif %}
-    <input type="text" name="long-url" placeholder="ENTER YOUR URL"/>
-    <input type="submit" value="SHORTEN IT" />
-</form>
+<div class="col-md-12">
+    <form action={%url "shorten" %} name="myForm" method="post">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+        <p id="front-val-error"></p>
+        <input type="text" name="long-url" placeholder="ENTER YOUR URL" />
+        <input type="submit" onclick="submitForm()" value="SHORTEN IT" />
+    </form>
+</div>
 {%endblock%}

@@ -1,5 +1,5 @@
 {%extends "base.html"%} {%block title%}
-<title>Sling it | shortened</title>
+<title>Slingit. | Resulted Url</title>
 {%endblock%} {%block body%}
 <div class="result">
     <p class="result-url">
@@ -8,21 +8,7 @@
         <span id="copy-status">copy</span>
     </p>
 </div>
-{%endblock%} {%block script%}
-<script type="text/javascript">
-function copy() {
-    var copyText = document.getElementById("copy-url");
-    var copyStatus = document.getElementById("copy-status");
-    var inp = document.createElement('input');
-    document.body.appendChild(inp)
-    inp.value = copyText.textContent
-    inp.select();
-    document.execCommand('copy', false);
-    inp.remove();
-    copyStatus.innerHTML = "copied"
-}
-</script>
-{%endblock%}
+{%endblock%} 
 </body>
 
 </html>
