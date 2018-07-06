@@ -3,6 +3,8 @@
 
 [Slingitme](http://slingit.me), a URL shortener that helps you generate short and crisp links which not only makes the link look much cleaner and allows customization, but also helps to keep a track of clicks and also monitor traffic behaviour.
 
+My first django project, so do :star: and appreciate.
+
 
 ### Installation 
 
@@ -23,7 +25,7 @@
 
 - Set your domain name in settings.py
    
-    `MY_URL='www.localhost:8000/`
+    `MY_URL='my-domain-name.com`
 
 
 - Enable Debug for debugging
