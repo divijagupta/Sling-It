@@ -1,0 +1,273 @@
+body {
+
+    font-family: 'Montserrat', cursive;
+    color:#5D5D5D;
+}
+
+.orange{
+    color: #FF9900;
+}
+.first{
+ 
+    padding: 20px 0px;
+   
+}
+.logo{
+    
+    color:#5a5a5a;
+    font-size:26px;
+    font-weight:700;
+    margin: 0px;
+    
+
+}
+
+.menu{
+    text-align: right;
+    margin-top: 8px;
+    color:#747474;
+    
+}
+.menu-item{
+margin:0px 7px;
+letter-spacing: 2px;
+font-size:13px;
+font-weight: 400;  
+}
+#github{
+    margin-right: 0px;
+}
+.menu-item>a{
+    color:#747474;;
+}
+
+.menu-item:hover{
+    color: #FF9900;
+    cursor: pointer;
+
+}
+.main-text{
+    font-size: 40px;
+   margin-top: 60px;
+    text-align: center;
+    font-weight: 700;
+}
+.inner-text{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 300;
+}
+form {
+    margin:25px auto;
+    margin-bottom:35px;
+    text-align: center;
+}
+input[type="text"] {
+    padding: 16px;
+    font-size: 15px;
+    border: 0px solid white;
+    width: 45%;
+    background-color: white;
+    font-family: Open Sans;
+
+    box-shadow:0px 0px 10px #eaeaea;
+    
+}
+
+
+input[type="submit"] {
+    width: 12%;
+       margin-bottom:3px; 
+     font-family: Open Sans;
+    color: white;
+     font-size: 15px;
+     padding: 16px;
+    margin-left: -10px;
+    background-color: #FF9900;
+
+    border:0px solid;
+    font-weight: 600;
+
+  
+}
+::placeholder {
+  color: #737373;
+  font-size: 15px;
+}
+
+
+.about-box{
+  
+    justify-content: center;
+    padding:30px;  
+   cursor:pointer;
+}
+.hvr-grow{
+    display: block;
+}
+.condensed{
+    padding-left: 0px;
+    padding-right:60px; 
+    cursor:pointer;
+}
+.secured{
+    padding-left: 60px;
+    padding-right:0px 
+}
+.ele-image{
+    height: 80px;
+  display: block;
+  margin: 0px auto;
+     
+   
+}
+.ele-text{
+    font-weight: 800;
+    font-size: 17px;
+    opacity: 0.9;
+    margin-top: 35px;
+    letter-spacing: 2px;
+    text-align: center;
+    
+
+}
+.ele-text-des{
+ font-size: 15px;
+ margin-top: 10px;
+ text-align: center;
+
+
+}
+
+.footer{
+    padding:30px 30px;
+   margin-top: 30px;
+   text-align: center;
+  
+}
+.github-profile{
+    color:#FF9900;
+}
+
+.logo-footer{
+    
+    font-size:15px;
+    margin: 30px;
+
+    color:grey;
+    
+
+}
+.logo-footer-span{
+    font-weight:700;
+}
+
+a:hover{
+    color: #FF9900;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 650px) {
+    .first{
+        padding:10px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        border-radius: 3px;
+        margin: 0px;
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 700;
+       
+    }
+    ::placeholder{
+        font-size: 14px;
+        color: grey;
+        }
+    form{
+    	margin: 25px auto;
+        
+    }
+    .first{
+        background-image: none;
+       
+    }
+    input[type="text"] {
+        padding: 13px;
+        width: 100%;
+        border-radius: 3px;
+        border:2px solid whitesmoke;
+        font-size: 16px;
+        box-shadow: none;
+
+    }
+    .logo{
+        text-align: center;
+        font-size: 22px;
+    }
+    .main-text{
+     font-size: 33px;
+    
+
+
+    text-align: center;
+    
+ 
+   
+    margin-top: 80px;
+
+    }
+
+    .inner-text {
+       display: none;
+      
+    }
+    .about-text{
+        display: none;
+    }
+    .list-inline{
+        margin-left:0px;
+        display: inline-block;
+    }
+    .list-inline>li{
+         padding: 0px;
+    }
+    .flex-box{
+        display: block;
+    }
+    .menu-bar{
+        text-align: center;
+    }
+    .menu{
+      display: none;
+      margin-top: 18px;
+    text-align: center;
+    font-size: 13px;
+    }.condensed{
+        padding:0px;
+    }
+    .secured{
+        padding: 0px;
+    }
+    .menu-items{
+        margin: 0px 5px;
+        
+    }.second{
+        padding: 20px;
+    }
+    .ele{
+        padding:20px;
+    }
+    .ele-text{
+           margin: 10px 0px;
+           margin-top: 30px;
+    }
+    .dnd {
+
+        margin: 10px;
+        margin-top:75px;
+        position: static;
+    }
+
+    
+}

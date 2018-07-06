@@ -20,7 +20,7 @@ My first django project, so do :star: and appreciate.
 
 - Install requirements
 
-    `pip install -r requirements.txt`
+    `pip install -r requirements/requirements.txt`
 
 
 - Set your domain name in settings.py
