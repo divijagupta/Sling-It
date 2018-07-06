@@ -1,20 +1,60 @@
 {%extends "base.html"%} 
+{%load static%}
 {%block title%}
-<title>SLINGIT.ME | URL Shortner  </title>
+<title>slingitme | URL Shortner  </title>
 {%endblock%}
  {%block body%}
 <div class="col-md-12">
-    <form action={%url "shorten" %} name="myForm" method="post">
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                {% endfor %}
-        </ul>
-        {% endif %}
-        <p id="front-val-error"></p>
-        <input type="text" name="long-url" placeholder="ENTER YOUR URL" />
-        <input type="submit" onclick="submitForm()" value="SHORTEN IT" />
-    </form>
-</div>
+                <p class="main-text animated fadeInDown">Get noticed with just a click.</p>
+                <p class="inner-text  animated fadeInDown">Optimize, track and maximize your success with Slingit, yet-to-grow link building and
+                    <br> management rostrum.</p>
+            </div>
+            <div class="col-md-12">
+                <form action={%url "shorten" %} class="animated fadeInRight" name="myForm" method="post">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                            {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <p id="front-val-error"></p>
+                    <input type="text" name="long-url" placeholder="http://enter-your-url.com" />
+                    <input type="submit" class="hvr-fade" onclick="submitForm()" value="Shorten URL" />
+                </form>
+            </div>
+        </div>
+        <div class="row second animated fadeInUp">
+            <div class="col-md-4 about-box condensed ">
+                <div class="ele"><img class="images-responsive hvr-grow  ele-image" src={%static "images/cut.png" %}>
+                    <p class="ele-text">
+                        CONDENSED
+                    </p>
+                    <p class="ele-text-des">
+                        Condense the length of your links and not your user experience.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 about-box ">
+                <div class="ele"><img class="images-responsive  hvr-grow ele-image " src={%static "images/analyse.png" %}>
+                    <p class="ele-text anylyse-text">
+                        ANALYTICS
+                    </p>
+                    <p class="ele-text-des">
+                        Analyze your growth, success and visitor hits at every touchpoint with Slingit.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 about-box secured ">
+                <div class="ele">
+                    <img class="images-responsive hvr-grow  ele-image" src={%static "images/secured.png" %}>
+                    <p class="ele-text">
+                        SECURED
+                    </p>
+                    <p class="ele-text-des">
+                        Secure your enterprise with a better and secured user interaction.
+                    </p>
+                </div>
+            </div>
+        </div>
 {%endblock%}

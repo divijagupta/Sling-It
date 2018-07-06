@@ -1,10 +1,10 @@
 
 ![Logo](images/mainlogo.png)
 
-[Slingit.](http://slingit.me), a URL shortener that helps you generate short and crisp links which not only makes the link look much cleaner and allows customization, but also helps to keep a track of clicks and also monitor traffic behaviour.
+[Slingitme](http://slingit.me), a URL shortener that helps you generate short and crisp links which not only makes the link look much cleaner and allows customization, but also helps to keep a track of clicks and also monitor traffic behaviour.
 
 
-### Installation
+### Installation 
 
 - Create a virtual environment
 

@@ -18,6 +18,7 @@ def home(request):
 
 @csrf_exempt
 def shorten(request):
+	return render(request,"result.html",{"new_url":"http://localhost:8000/i8VO46"})
 	if request.method=="POST":
 		if request.POST["long-url"]:
 			if re.match("^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$",request.POST["long-url"]):

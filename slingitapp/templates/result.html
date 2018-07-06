@@ -1,12 +1,19 @@
 {%extends "base.html"%} {%block title%}
 <title>Slingit. | Resulted Url</title>
 {%endblock%} {%block body%}
-<div class="result">
+<div class="col-md-12 result">
+
     <p class="result-url">
         <span id="copy-url">{{new_url}}</span>
-        <i class="far fa-copy fa-1x copy-logo" onclick="copy()"></i>
-        <span id="copy-status">copy</span>
     </p>
+    <button
+        
+        <span id="copy-status">Copy</span>
+    </button>
+     <button>
+     
+     	<span id="share-status">Share</span>
+     </button>   
 </div>
 {%endblock%} 
 </body>
