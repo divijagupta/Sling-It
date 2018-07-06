@@ -23,15 +23,13 @@ My first django project, so do :star: and appreciate.
     `pip install -r requirements/requirements.txt`
 
 
-- Set your domain name in settings.py
+- Set your domain name in `settings/settings.py`
    
-    `MY_URL='my-domain-name.com`
+    `MY_URL='my-domain-name.com'`
+    
+    To enable Debug set the variable `DEBUG` to `True`.
 
-
-- Enable Debug for debugging
-
-    Go to the `settings.py` file and set the variable `DEBUG` to True.
-
+    
 
 - Migrate DB
 
